@@ -50,3 +50,9 @@ class Image(models.Model):
     location = models.ForeignKey('Location', on_delete=models.CASCADE, null='True', blank=True)
     ''' The category the image is placed in '''
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null='True', blank=True)
+
+    def __str__(self):
+        return self.name
+
+    def save_image(self):
+        self.save()
