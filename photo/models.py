@@ -35,3 +35,18 @@ class Category(models.Model):
     '''Method to filter database result'''
     def __str__(self):
         return self.name
+
+#MODEL FOR IMAGE
+################
+class Image(models.Model):
+    # Attribute Variables of Class Category
+    '''name of image taken '''
+    name = models.CharField(max_length=30)
+    '''image posted '''
+    image = models.ImageField(upload_to='pics/')
+    ''' description of image '''
+    description = models.CharField(max_length=30)
+    ''' the location the picture was taken '''
+    location = models.ForeignKey('Location', on_delete=models.CASCADE, null='True', blank=True)
+    ''' The category the image is placed in '''
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, null='True', blank=True)
