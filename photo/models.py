@@ -16,3 +16,10 @@ class tags(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save_tags(self):
+        self.save()
+    def delete_tags(self):
+        self.delete()
+    def __str__(self):
+        return self.name
