@@ -9,3 +9,10 @@ class Location(models.Model):
     '''Method to filter database result'''
     def __str__(self):
         return self.name
+
+# MODEL FOR TAGS
+class tags(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
