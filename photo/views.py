@@ -13,3 +13,7 @@ def index(request):
     context = {'photos': photos}
     return render( request, 'home.html', {'photos': photos})
 
+#LOCATION Page View Function!
+def location(request):
+
+    return render(request,'location.html',)
