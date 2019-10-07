@@ -5,4 +5,6 @@ urlpatterns=[
     #index path
     url('^$', views.index,name='index'),
     url('location/', views.category, name='location'),
+    url('category', views.category, name='category'),
+
 ]
