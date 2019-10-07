@@ -51,6 +51,12 @@ class Image(models.Model):
     ''' The category the image is placed in '''
     category = models.ForeignKey('Category', on_delete=models.CASCADE, null='True', blank=True)
 
+    @classmethod
+    def search_by_category(cls,search_term):
+        image = cls.objects.filter(category__name__icontains=search_term).all()
+        return image
+
+    '''Method to filter database results'''
     def __str__(self):
         return self.name
 
