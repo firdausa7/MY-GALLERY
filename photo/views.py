@@ -17,3 +17,9 @@ def index(request):
 def location(request):
 
     return render(request,'location.html',)
+
+#CATEGORY Page View Function!
+
+def category(request):
+    return render(request,'category.html',)
+
