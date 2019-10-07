@@ -6,48 +6,46 @@
 <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
 <div class="container-fluid" id="full">
-        <form class="form-inline">
-                <div class="md-form my-5">
-                  <input class="form-control mr-sm-4" type="text" placeholder="Search for categories" aria-label="Search">
-                </div>
-              </form>
+  <form class="form-inline">
+    <div class="md-form my-5">
+      <input class="form-control mr-sm-4" type="text" placeholder="Search for categories" aria-label="Search">
+    </div>
+  </form>
 
 </div>
-<div class="container text-center">
+<!-- IMAGES DISPLAYED HERE -->
+<div class="container">
+    <div class="row">
+        {% if photos%} {% for photo in photos %}
 
-  <div class="row">
-      <div class="col-sm-4">
-          <!-- IMAGES DISPLAYED HERE -->
-          <div class="container">
-              <div class="card">
-                  {% if photos%}
-                  {% for photo in photos %}
+        <div class="col-xs-4 col-sm-6 col-lg-4">
+            <a href="{{ photo.image.url }}" data-lightbox="gallery"></p>
 
-                  <div class="photos">
+          <img class="text-center" src="{{ photo.image.url }}" alt="Card image cap"style="box-shadow: 0px 0px 2px 2px rgba(94, 91, 91, 0.12); height:500px; width:400px;"></a>
 
-
-
-                      <img src="{{ photo.image.url }}" class="img-responsive" style="box-shadow: 0px 0px 2px 2px rgba(94, 91, 91, 0.12);">
-                      </a>
-
-                  </div>
-
-                  {% endfor %} {% else%}
-                  <h3>You have no images</h3>
-              </div>
           </div>
-          {% endif %}
+          {% endfor %}{% else%}
 
-      </div>
+        </div>
 
-  </div>
+    </div>
+
+
+
+
+<h3>You have no images</h3>
+</div>
+</div>
+</div>
+{% endif %}
 
 </div>
-    {% block styles%} <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    {% endblock %}
- {% endblock %}
 
+</div>
 
-
-
-
+</div>
+{% block styles%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% endblock %}
+{% endblock %}
